@@ -90,23 +90,17 @@ fun PictureCard(topic: Topic) {
 @Composable
 fun TopicGrid(modifier: Modifier = Modifier) {
     LazyVerticalGrid(
-        cells = GridCells.Fixed(2)
+        cells = GridCells.Fixed(2),
+        verticalArrangement = Arrangement.spacedBy(8.dp),
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
+        modifier = modifier.padding(8.dp)
     ) {
         items(DataSource.topics) {
             PictureCard(topic = it)
         }
     }
 }
-/*LazyVerticalGrid(
-    cells = GridCells.Fixed(2),
-    verticalArrangement = Arrangement.spacedBy(8.dp),
-    horizontalArrangement = Arrangement.spacedBy(8.dp),
-    modifier = modifier.padding(8.dp)
-) {
-    items(topicList) { topic ->
-        PictureCard(topic = topic)
-    }
-}*/
+
 
 
 @Preview(showBackground = true)
